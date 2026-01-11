@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+      --text-soft: #e5e7eb;
+  --bg-dark: #1e1e2f;
+}
