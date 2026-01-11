@@ -32,7 +32,7 @@ export default define.page(function App({ Component }) {
 
         <meta name="theme-color" content="#121827" />
 
-        <link rel="stylesheet" href="assets/styles.css" />
+        <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
         <Component />
