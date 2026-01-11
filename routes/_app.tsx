@@ -6,7 +6,7 @@ export default define.page(function App({ Component }) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Łukasz Gil ELOOOOOOOOOOOOO</title>
+        <title>Łukasz Gil Software</title>
 
         <meta
           name="description"
@@ -32,7 +32,7 @@ export default define.page(function App({ Component }) {
 
         <meta name="theme-color" content="#121827" />
 
-        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="assets/styles.css" />
       </head>
       <body>
         <Component />
