@@ -7,7 +7,7 @@
     "build": "vite build",
     "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update .",
-    "format:tailwind": "npx prettier --write 'routes/**/*.{ts,tsx}'"
+    "format": "deno fmt && npx prettier --write '{routes,components,islands}/**/*.{ts,tsx}'"
   },
 
   "lint": {

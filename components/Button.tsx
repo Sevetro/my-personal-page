@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 
-export interface ButtonProps {
+interface ButtonProps {
   id?: string;
   onClick?: () => void;
   children?: ComponentChildren;
@@ -11,7 +11,7 @@ export function Button(props: ButtonProps) {
   return (
     <button
       {...props}
-      class="px-2  border-gray-500 border-2 py-1 rounded-sm bg-white hover:bg-gray-200 transition-colors"
+      class="rounded-sm border-2 border-gray-500 bg-white px-2 py-1 transition-colors hover:bg-gray-200"
     />
   );
 }
