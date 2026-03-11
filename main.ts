@@ -7,7 +7,7 @@ app.use(staticFiles());
 
 // Pass a shared value from a middleware
 app.use(async (ctx) => {
-  ctx.state.shared = "hello";
+  ctx.state.lang = ctx.url.pathname === "/en" ? "en" : "pl";
   return await ctx.next();
 });
 

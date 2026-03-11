@@ -5,26 +5,31 @@ interface LangSwitchProps {
 }
 
 export function LangSwitch({ currLang }: LangSwitchProps) {
-  const langs: Lang[] = ["pl", "en"];
-
   return (
-    <div class="mt-2 flex justify-center gap-2">
-      {langs.map((lang) => {
-        const isCurrent = lang === currLang;
-        return (
-          <a
-            key={lang}
-            href={`/${lang}`}
-            class={`rounded px-3 py-1 transition-colors duration-200 ${
-              isCurrent
-                ? "pointer-events-none cursor-default bg-(--bg-section) text-(--text-accent)"
-                : "text-(--text-main) hover:bg-(--bg-section) hover:text-(--text-accent)"
-            }`}
-          >
-            {lang.toUpperCase()}
-          </a>
-        );
-      })}
+    <div class="flex items-center gap-2">
+      <a
+        href="/"
+        class={`transition-colors duration-200 ${
+          currLang === "pl"
+            ? "pointer-events-none cursor-default text-(--text-accent)"
+            : "hover:text-(--text-accent)"
+        }`}
+      >
+        PL
+      </a>
+
+      <span class="h-4 w-px bg-(--divider)" aria-hidden="true" />
+
+      <a
+        href="/en"
+        class={`transition-colors duration-200 ${
+          currLang === "en"
+            ? "pointer-events-none cursor-default text-(--text-accent)"
+            : "hover:text-(--text-accent)"
+        }`}
+      >
+        EN
+      </a>
     </div>
   );
 }

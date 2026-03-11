@@ -1,8 +1,21 @@
-import pl from "./pl.json" with { type: "json" };
-import en from "./en.json" with { type: "json" };
+import { en } from "./en.ts";
+import { pl } from "./pl.ts";
+
+export interface Dictionary {
+  html: {
+    description: string;
+  };
+  navbar: {
+    home: string;
+    about: string;
+    projects: string;
+    services: string;
+    contact: string;
+  };
+}
 
 export type Lang = "pl" | "en";
 
-export function getDictionary(lang: Lang) {
+export function getTranslations(lang: Lang) {
   return lang === "pl" ? pl : en;
 }

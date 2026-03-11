@@ -1,51 +1,31 @@
-import { getDictionary, Lang } from "../i18n/i18n.ts";
+import { getTranslations, Lang } from "../i18n/i18n.ts";
+import { ThemeToggle } from "../islands/theme-toggle.tsx";
+import { LangSwitch } from "./lang-switch.tsx";
+import { NavbarItem } from "./navbar-item.tsx";
 
 interface NavbarProps {
   lang: Lang;
 }
 
 export function Navbar({ lang }: NavbarProps) {
-  const txt = getDictionary(lang);
+  const { navbar } = getTranslations(lang);
 
   return (
     <nav
       aria-label="Main navigation"
-      class="border-b border-(--bg-section) bg-(--bg-dark)"
+      class="flex w-full justify-between bg-(--bg-secondary) px-6"
     >
-      <ul class="flex justify-center gap-6 px-6 py-4 font-medium text-(--text-main)">
-        <li>
-          <a
-            href="#about"
-            class="transition-colors duration-200 hover:text-(--accent-primary) focus:text-(--accent-primary) focus:outline-none"
-          >
-            {txt.about}
-          </a>
-        </li>
-        <li>
-          <a
-            href="#projects"
-            class="transition-colors duration-200 hover:text-(--accent-primary) focus:text-(--accent-primary) focus:outline-none"
-          >
-            {txt.projects}
-          </a>
-        </li>
-        <li>
-          <a
-            href="#services"
-            class="transition-colors duration-200 hover:text-(--accent-primary) focus:text-(--accent-primary) focus:outline-none"
-          >
-            {txt.services}
-          </a>
-        </li>
-        <li>
-          <a
-            href="#contact"
-            class="transition-colors duration-200 hover:text-(--accent-primary) focus:text-(--accent-primary) focus:outline-none"
-          >
-            {txt.contact}
-          </a>
-        </li>
+      <ul class="flex gap-6 py-4">
+        <NavbarItem href="#home" label={navbar.home} />
+        <NavbarItem href="#projects" label={navbar.projects} />
+        <NavbarItem href="#services" label={navbar.services} />
+        <NavbarItem href="#contact" label={navbar.contact} />
       </ul>
+
+      <div class="flex gap-2">
+        <ThemeToggle />
+        <LangSwitch currLang={lang} />
+      </div>
     </nav>
   );
 }

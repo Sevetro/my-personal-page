@@ -25,6 +25,7 @@
 
   "imports": {
     "@/": "./",
+    "embla-carousel-react": "npm:embla-carousel-react@^8.6.0",
     "fresh": "jsr:@fresh/core@^2.2.0",
     "preact": "npm:preact@^10.27.2",
     "@preact/signals": "npm:@preact/signals@^2.5.0",
